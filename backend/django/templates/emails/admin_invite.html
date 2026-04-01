@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <p>Hello {{ full_name }},</p>
+
+    <p>
+        You have been invited to access the
+        <strong>Survey Application Admin Dashboard</strong>.
+    </p>
+
+    <p>
+        <strong>Registered Details:</strong><br />
+        Email: {{ email }}<br />
+        Mobile: {{ mobile }}<br />
+        Location: {{ location }}
+    </p>
+
+    {% if note %}
+    <p>
+        <strong>Note from the inviter:</strong><br />
+        {{ note }}
+    </p>
+    {% endif %}
+
+    <p>
+        Click the link below to set your password and activate your account:
+    </p>
+
+    <p>
+        <a href="{{ invite_link }}">
+            Activate Admin Account
+        </a>
+    </p>
+
+    <p>
+        This link will expire in <strong>48 hours</strong>.
+    </p>
+
+    <p>
+        Regards,<br />
+        Women Empowerment Team
+    </p>
+</body>
+</html>

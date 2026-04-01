@@ -1,0 +1,725 @@
+{
+  "info": {
+    "_postman_id": "b4c520ee-bb3b-4b57-9476-4691963a7eff",
+    "name": "WE POC Backend API's",
+    "description": "Admin, Invite, Survey and Dashboard APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "45633629"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "admin",
+          "item": [
+            {
+              "name": "login",
+              "item": [
+                {
+                  "name": "Admin Login",
+                  "request": {
+                    "auth": {
+                      "type": "noauth"
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n//   \"email\": \"admin@we-poc.local\",\n  \"email\": \"admin@we-poc.local\",\n  \"password\": \"a201b6f458b2a83376e366f982ad5ebbf8c8daf09a854749a12fb33ac8d2318896101481469ff0e9dcb2662635fe8621c35ce14e21d1db5fe9c4e0207412c5cc9ff5a36ebff8117a8d3ec5b33c3ffd90f22e4fe89847fb65b750e18eb24803b6d869ca33b1f3d75d79c3d269665be9f70a0d8950df019cba1d8daa8aa121512b093691662b7f3c2ec04bacfe2850b759e14c22877977ae67a79d1078ba3eae9a30e56d533a27039da7759de719acf1ac967ad40113e84b8cde52fab0b94e2ca2260e576c53adfa2b5d9a17f600788a85c19fa43dd57dc25fd6b133fca83b16e220c20cc2e85ac70fcbf2d1e10b80c791ee2839d09a66f6c59138828c98fa7aee\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/admin/login/",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "admin",
+                        "login",
+                        ""
+                      ]
+                    },
+                    "description": "Admin login using RSA encrypted password"
+                  },
+                  "response": []
+                }
+              ]
+            },
+            {
+              "name": "activate",
+              "item": [
+                {
+                  "name": "Admin Activate",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"invite_id\": \"09c81633-b503-41de-9440-fe4d6ab545a2\",\n  \"password\": \"Admin@123\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/admin/activate/",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "admin",
+                        "activate",
+                        ""
+                      ]
+                    },
+                    "description": "Activate user account using invite ID"
+                  },
+                  "response": []
+                }
+              ]
+            },
+            {
+              "name": "invite",
+              "item": [
+                {
+                  "name": "Admin Invite",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"yash.joshi@eminds.ai\",\n  \"full_name\": \"Yash B Joshi\",\n  \"mobile\": \"1234567890\",\n  \"location\": \"Hyderabad\",\n  \"note\": \"NA\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/admin/invite/",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "admin",
+                        "invite",
+                        ""
+                      ]
+                    },
+                    "description": "Admin invites a user via email"
+                  },
+                  "response": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "internal",
+      "item": [
+        {
+          "name": "encrypt-text",
+          "item": [
+            {
+              "name": "Encrypt Test (Internal)",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"Admin@123\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/internal/encrypt-text/",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "internal",
+                    "encrypt-text",
+                    ""
+                  ]
+                },
+                "description": "Internal View to encrypt plain text using RS-256 and Public Key"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "locations",
+      "item": [
+        {
+          "name": "districts",
+          "item": [
+            {
+              "name": "List Districts",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/locations/districts/",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "locations",
+                    "districts",
+                    ""
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "divisions",
+          "item": [
+            {
+              "name": "List Revenue Divisions",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/locations/divisions/?district_id=1",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "locations",
+                    "divisions",
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "key": "district_id",
+                      "value": "1",
+                      "description": "District ID"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "mandals",
+          "item": [
+            {
+              "name": "List Mandals",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/locations/mandals/?division_id=1",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "locations",
+                    "mandals",
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "key": "division_id",
+                      "value": "1",
+                      "description": "Revenue Division ID"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "survey",
+      "item": [
+        {
+          "name": "choices",
+          "item": [
+            {
+              "name": "List choice categories",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/survey/choices/?category",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "survey",
+                    "choices",
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "key": "category",
+                      "value": null,
+                      "description": "ENTREPRENEUR_STAGE"
+                    },
+                    {
+                      "key": null,
+                      "value": "AGE_GROUP",
+                      "description": "INTERESTS",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": null,
+                      "value": null,
+                      "description": "BASIC_SUPPORT",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": null,
+                      "value": null,
+                      "description": "SUBMISSION_MODE",
+                      "type": "text",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "description": "Returns enum categories and active options"
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "schema",
+          "item": [
+            {
+              "name": "Get survey schema",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/survey/schema/",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "survey",
+                    "schema",
+                    ""
+                  ]
+                },
+                "description": "Returns survey steps and questions for FE rendering"
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "submit",
+          "item": [
+            {
+              "name": "Submit survey",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"district\": 1,\n  \"division\": 1,\n  \"mandal\": 3,\n  \"answers\": [\n    { \"question_id\": \"AGE_GROUP\", \"value\": \"26_35\" },\n    { \"question_id\": \"AREA_TYPE\", \"value\": \"URBAN\" },\n    { \"question_id\": \"EMPLOYMENT_STATUS\", \"value\": \"ENTREPRENEUR\" },\n    { \"question_id\": \"ENTREPRENEUR_STAGE\", \"value\": \"ASPIRING\" },\n    {\n      \"question_id\": \"INTERESTS\",\n      \"value\": [\"TAILORING\", \"FOOD\", \"ONLINE_SELLING\"]\n    },\n    { \"question_id\": \"SUBMISSION_MODE\", \"value\": \"ONLINE\" }\n  ]\n}\n",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/survey/submit/",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "survey",
+                    "submit",
+                    ""
+                  ]
+                },
+                "description": "Submit anonymized survey response"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "dashboard",
+      "item": [
+        {
+          "name": "Age Distribution",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/dashboard/age-distribution/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboard",
+                "age-distribution",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Area Type Split",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/dashboard/area-type/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboard",
+                "area-type",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Aspirations",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/dashboard/aspirations/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboard",
+                "aspirations",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "District Priority Index",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/dashboard/district-priority/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboard",
+                "district-priority",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Entrepreneur Funnel",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/dashboard/entrepreneur-funnel/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboard",
+                "entrepreneur-funnel",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Submission Mode",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/dashboard/submission-mode/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboard",
+                "submission-mode",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Dashboard Summary",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/dashboard/summary/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboard",
+                "summary",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Top Interests",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/dashboard/top-interests/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboard",
+                "top-interests",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Women Status Chart",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/dashboard/women-status/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboard",
+                "women-status",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{access_token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8000/api"
+    },
+    {
+      "key": "access_token",
+      "value": ""
+    },
+    {
+      "key": "localHost",
+      "value": ""
+    }
+  ]
+}

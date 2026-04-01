@@ -1,0 +1,359 @@
+{
+  "choice_categories": [
+    {
+      "code": "AGE_GROUP",
+      "name": "Age Group",
+      "options": [
+        { "code": "18_25", "label": "18-25 years", "order": 1, "icon": "FaUserGraduate" },
+        { "code": "26_35", "label": "26-35 years", "order": 2, "icon": "FaUser" },
+        { "code": "36_40", "label": "36-40 years", "order": 3, "icon": "FaUserTie" }
+      ]
+    },
+
+    {
+      "code": "AREA_TYPE",
+      "name": "Area Type",
+      "options": [
+        { "code": "RURAL", "label": "Rural", "order": 1, "icon": "GiFarmer" },
+        { "code": "URBAN", "label": "Urban", "order": 2, "icon": "FaCity" }
+      ]
+    },
+
+    {
+      "code": "EMPLOYMENT_STATUS",
+      "name": "Employment Status",
+      "options": [
+        { "code": "HOMEMAKER", "label": "Homemaker", "order": 1, "icon": "FaHome" },
+        { "code": "STUDENT", "label": "Student", "order": 2, "icon": "FaGraduationCap" },
+        { "code": "EMPLOYED", "label": "Employed", "order": 3, "icon": "FaBriefcase" },
+        { "code": "ENTREPRENEUR", "label": "Entrepreneur", "order": 4, "icon": "FaLightbulb" },
+        { "code": "FARMER", "label": "Farmer", "order": 5, "icon": "GiFarmTractor" },
+        { "code": "DIFFERENTLY_ABLED", "label": "Differently-Abled", "order": 6, "icon": "FaWheelchair" },
+        { "code": "UNEMPLOYED", "label": "Unemployed", "order": 7, "icon": "FaUserSlash" }
+      ]
+    },
+
+    {
+      "code": "ENTREPRENEUR_STAGE",
+      "name": "Entrepreneur Stage",
+      "options": [
+        { "code": "ASPIRING", "label": "Aspiring Entrepreneur", "order": 1 },
+        { "code": "EXISTING", "label": "Existing Entrepreneur", "order": 2 }
+      ]
+    },
+
+    {
+      "code": "INTERESTS",
+      "name": "Areas of Interest",
+      "options": [
+        { "code": "TAILORING", "label": "Tailoring", "order": 1 },
+        { "code": "FOOD", "label": "Food", "order": 2 },
+        { "code": "HANDICRAFTS", "label": "Handicrafts", "order": 3 },
+        { "code": "BEAUTY", "label": "Beauty", "order": 4 },
+        { "code": "ONLINE_SELLING", "label": "Online Selling", "order": 5 }
+      ]
+    },
+
+    {
+      "code": "BASIC_SUPPORT",
+      "name": "Basic Support Required",
+      "options": [
+        { "code": "TRAINING", "label": "Training", "order": 1 },
+        { "code": "FUNDING", "label": "Funding", "order": 2 },
+        { "code": "EQUIPMENT", "label": "Equipment", "order": 3 }
+      ]
+    },
+
+    {
+      "code": "SUBMISSION_MODE",
+      "name": "Submission Mode",
+      "options": [
+        { "code": "ONLINE", "label": "Online", "order": 1 },
+        { "code": "OFFLINE", "label": "Offline", "order": 2 }
+      ]
+    },
+    
+    {
+      "code": "YES_NO",
+      "name": "Yes / No",
+      "options": [
+        { "code": "YES", "label": "Yes", "order": 1 },
+        { "code": "NO", "label": "No", "order": 2 }
+      ]
+    },
+
+    {
+      "code": "TRAINING_AREAS",
+      "name": "Training Areas",
+      "options": [
+        { "code": "IT", "label": "Information Technology", "order": 1 },
+        { "code": "DIGITAL_MARKETING", "label": "Digital Marketing", "order": 2 },
+        { "code": "ACCOUNTING", "label": "Accounting & Finance", "order": 3 },
+        { "code": "HOSPITALITY", "label": "Hospitality & Tourism", "order": 4 },
+        { "code": "HEALTHCARE", "label": "Healthcare", "order": 5 },
+        { "code": "MANUFACTURING", "label": "Manufacturing Skills", "order": 6 },
+        { "code": "AGRICULTURE", "label": "Agriculture & Agribusiness", "order": 7 },
+        { "code": "SOFT_SKILLS", "label": "Soft Skills & Communication", "order": 8 },
+        { "code": "ENTREPRENEURSHIP", "label": "Entrepreneurship", "order": 9 }
+      ]
+    },
+
+    {
+      "code": "TRAINING_MODE",
+      "name": "Training Mode",
+      "options": [
+        { "code": "CLASSROOM", "label": "Classroom Training", "order": 1 },
+        { "code": "ONLINE", "label": "Online Training", "order": 2 },
+        { "code": "HYBRID", "label": "Hybrid (Online + Classroom)", "order": 3 },
+        { "code": "ON_JOB", "label": "On-the-Job Training", "order": 4 }
+      ]
+    },
+  
+    {
+      "code": "EMPLOYMENT_SECTORS",
+      "name": "Employment Sectors",
+      "options": [
+        { "code": "IT", "label": "Information Technology", "order": 1 },
+        { "code": "HEALTHCARE", "label": "Healthcare", "order": 2 },
+        { "code": "EDUCATION", "label": "Education", "order": 3 },
+        { "code": "MANUFACTURING", "label": "Manufacturing", "order": 4 },
+        { "code": "RETAIL", "label": "Retail", "order": 5 },
+        { "code": "HOSPITALITY", "label": "Hospitality", "order": 6 },
+        { "code": "BANKING", "label": "Banking & Finance", "order": 7 },
+        { "code": "GOVERNMENT", "label": "Government", "order": 8 }
+      ]
+    },
+
+    {
+      "code": "GOVT_SCHEMES",
+      "name": "Government Schemes Availed",
+      "options": [
+        { "code": "TREAD", "label": "TREAD Scheme", "order": 1 },
+        { "code": "MAHILA_UDYAM_NIDHI", "label": "Mahila Udyam Nidhi Scheme", "order": 2 },
+        { "code": "MUDRA_YOJANA", "label": "Mudra Yojana Scheme", "order": 3 },
+        { "code": "ANNAPURNA", "label": "Annapurna Scheme", "order": 4 },
+        { "code": "STREE_SHAKTI", "label": "Stree Shakti Package", "order": 5 },
+        { "code": "BHARTIYA_MAHILA_BANK", "label": "Bhartiya Mahila Business Bank Loan", "order": 6 },
+        { "code": "DENA_SHAKTI", "label": "Dena Shakti Scheme", "order": 7 },
+        { "code": "UDYOGINI", "label": "Udyogini Scheme", "order": 8 },
+        { "code": "CENT_KALYANI", "label": "Cent Kalyani Scheme", "order": 9 },
+        { "code": "MUDRA_MICRO_UNITS", "label": "Mudra - Micro Units Development & Refinance Agency", "order": 10 },
+        { "code": "STAND_UP_INDIA", "label": "Stand-Up India", "order": 11 },
+        { "code": "PMEGP", "label": "PMEGP - Prime Minister's Employment Generation Program", "order": 12 },
+        { "code": "CGTMSE", "label": "CGTMSE - Credit Guarantee Fund Trust for Micro and Small Enterprises", "order": 13 }
+      ]
+    },
+
+    {
+      "code": "GOVT_GROUP_MEMBERSHIP",
+      "name": "Government Group Membership",
+      "options": [
+        {
+          "code": "MEPMA",
+          "label": "MEPMA (Mission for Elimination of Poverty in Municipal Areas)",
+          "order": 1
+        },
+        {
+          "code": "DWCRA",
+          "label": "DWCRA (Development of Women and Children in Rural Areas)",
+          "order": 2
+        },
+        {
+          "code": "NOT_A_MEMBER",
+          "label": "Not a member",
+          "order": 3
+        }
+      ]
+    }
+  ],
+
+  "steps": [
+    {
+      "step_id": "BASIC_INFO",
+      "title": "Basic Information",
+      "step_number": 1,
+      "total_steps": 6,
+      "questions": [
+        {
+          "question_id": "AGE_GROUP",
+          "label": "What is your age group?",
+          "input_type": "radio",
+          "required": true,
+          "options_category": "AGE_GROUP"
+        },
+        {
+          "question_id": "AREA_TYPE",
+          "label": "Area type",
+          "input_type": "radio",
+          "required": true,
+          "options_category": "AREA_TYPE"
+        }
+      ]
+    },
+
+    {
+      "step_id": "EMPLOYMENT",
+      "title": "Employment Categories",
+      "step_number": 2,
+      "total_steps": 6,
+      "questions": [
+        {
+          "question_id": "EMPLOYMENT_STATUS",
+          "label": "Employment category",
+          "input_type": "radio",
+          "required": true,
+          "options_category": "EMPLOYMENT_STATUS"
+        }
+      ]
+    },
+
+    {
+      "step_id": "ENTREPRENEUR",
+      "title": "Entrepreneur Details",
+      "step_number": 3,
+      "total_steps": 6,
+      "questions": [
+        {
+          "question_id": "ENTREPRENEUR_STAGE",
+          "label": "Entrepreneur stage",
+          "input_type": "radio",
+          "required": true,
+          "options_category": "ENTREPRENEUR_STAGE",
+          "visible_when": {
+            "EMPLOYMENT_STATUS": ["ENTREPRENEUR", "EMPLOYED"]
+          }
+        },
+        {
+          "question_id": "INTERESTS",
+          "label": "Areas of interest",
+          "input_type": "checkbox",
+          "required": false,
+          "options_category": "INTERESTS",
+          "visible_when": {
+            "EMPLOYMENT_STATUS": ["ENTREPRENEUR", "EMPLOYED"]
+          }
+        }
+      ]
+    },
+
+    {
+      "step_id": "TRAINING",
+      "title": "Training & Development",
+      "step_number": 4,
+      "total_steps": 6,
+      "questions": [
+        {
+          "question_id": "INTERESTED_IN_TRAINING",
+          "label": "Are you interested in skill development training?",
+          "input_type": "radio",
+          "required": false,
+          "options_category": "YES_NO",
+          "visible_when": {
+            "EMPLOYMENT_STATUS": ["STUDENT", "UNEMPLOYED"]
+          },
+          "order": 1
+        },
+        {
+          "question_id": "TRAINING_AREAS",
+          "label": "Select areas of interest for training",
+          "input_type": "checkbox",
+          "required": false,
+          "options_category": "TRAINING_AREAS",
+          "visible_when": {
+            "INTERESTED_IN_TRAINING": ["YES"]
+          },
+          "order": 2
+        },
+        {
+          "question_id": "TRAINING_MODE",
+          "label": "Preferred mode of training",
+          "input_type": "radio",
+          "required": false,
+          "options_category": "TRAINING_MODE",
+          "visible_when": {
+            "INTERESTED_IN_TRAINING": ["YES"]
+          },
+          "order": 3
+        },
+        {
+          "question_id": "EMPLOYMENT_INTEREST",
+          "label": "Are you interested in employment opportunities?",
+          "input_type": "radio",
+          "required": false,
+          "options_category": "YES_NO",
+          "visible_when": {
+            "EMPLOYMENT_STATUS": ["STUDENT", "UNEMPLOYED"]
+          },
+          "order": 4
+        },
+        {
+          "question_id": "EMPLOYMENT_SECTORS",
+          "label": "Preferred employment sectors",
+          "input_type": "checkbox",
+          "required": false,
+          "options_category": "EMPLOYMENT_SECTORS",
+          "visible_when": {
+            "EMPLOYMENT_INTEREST": ["YES"]
+          },
+          "order": 5
+        }
+      ]
+    },
+
+    {
+      "step_id": "SUPPORT",
+      "title": "Support Required",
+      "step_number": 5,
+      "total_steps": 6,
+      "questions": [
+        {
+          "question_id": "BASIC_SUPPORT",
+          "label": "What kind of support do you need?",
+          "input_type": "checkbox",
+          "required": false,
+          "options_category": "BASIC_SUPPORT"
+        }
+      ]
+    },
+
+    {
+      "step_id": "LAND",
+      "title": "Land & Infrastructure",
+      "step_number": 6,
+      "total_steps": 6,
+      "questions": [
+        {
+          "question_id": "REQUIRES_LAND",
+          "label": "Do you require land support?",
+          "input_type": "radio",
+          "required": false,
+          "options_category": "YES_NO"
+        },
+        {
+          "question_id": "AVAILING_GOVT_SCHEME",
+          "label": "Are you availing any government schemes?",
+          "input_type": "radio",
+          "required": false,
+          "options_category": "YES_NO"
+        },
+        {
+          "question_id": "GOVT_SCHEMES",
+          "label": "Which government schemes are you availing?",
+          "input_type": "checkbox",
+          "required": false,
+          "options_category": "GOVT_SCHEMES",
+          "visible_when": {
+            "AVAILING_GOVT_SCHEME": ["YES"]
+          }
+        },
+        {
+          "question_id": "GOVT_GROUP_MEMBERSHIP",
+          "label": "Are you a member of any of the following groups?",
+          "input_type": "checkbox",
+          "required": false,
+          "options_category": "GOVT_GROUP_MEMBERSHIP"
+        }
+      ]
+    }
+  ]
+}

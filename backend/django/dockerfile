@@ -1,0 +1,32 @@
+# ---- Base Image ----
+FROM python:3.12-slim
+
+# ---- Environment ----
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+# ---- Workdir ----
+WORKDIR /app
+
+# ---- System deps ----
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libpq-dev \
+    netcat-openbsd \
+    && rm -rf /var/lib/apt/lists/*
+
+# ---- Python deps ----
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# ---- Project code ----
+COPY . .
+
+# Collect staticfiles
+RUN python manage.py collectstatic
+
+# ---- Django port ----
+EXPOSE 8000
+
+# ---- Start server ----
+CMD ["gunicorn", "backend.wsgi:application", "--bind", "0.0.0.0:8000"]

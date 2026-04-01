@@ -1,0 +1,206 @@
+{
+  "choice_categories": [
+    {
+      "code": "AGE_GROUP",
+      "name": "Age Group",
+      "options": [
+        { "code": "18_25", "label": "18-25", "order": 1 },
+        { "code": "26_35", "label": "26-35", "order": 2 },
+        { "code": "36_45", "label": "36-45", "order": 3 },
+        { "code": "46_60", "label": "46-60", "order": 4 },
+        { "code": "60_PLUS", "label": "60+", "order": 5 }
+      ]
+    },
+
+    {
+      "code": "AREA_TYPE",
+      "name": "Area Type",
+      "options": [
+        { "code": "RURAL", "label": "Rural", "order": 1 },
+        { "code": "MUNICIPALITY", "label": "Municipality", "order": 2 },
+        { "code": "MUNICIPAL_CORP", "label": "Municipal Corporation", "order": 3 }
+      ]
+    },
+
+    {
+      "code": "EMPLOYMENT_STATUS",
+      "name": "Employment Status",
+      "options": [
+        { "code": "HOMEMAKER", "label": "Homemaker", "order": 1 },
+        { "code": "STUDENT", "label": "Student", "order": 2 },
+        { "code": "EMPLOYED", "label": "Employed", "order": 3 },
+        { "code": "ENTREPRENEUR", "label": "Entrepreneur", "order": 4 },
+        { "code": "FARMER", "label": "Farmer", "order": 5 },
+        { "code": "DIFFERENTLY_ABLED", "label": "Differently-Abled", "order": 6 },
+        { "code": "UNEMPLOYED", "label": "Unemployed", "order": 7 }
+      ]
+    },
+
+    {
+      "code": "ENTREPRENEUR_STAGE",
+      "name": "Entrepreneur Stage",
+      "options": [
+        { "code": "ASPIRING", "label": "Aspiring Entrepreneur", "order": 1 },
+        { "code": "EXISTING", "label": "Existing Entrepreneur", "order": 2 }
+      ]
+    },
+
+    {
+      "code": "INTERESTS",
+      "name": "Areas of Interest",
+      "options": [
+        { "code": "TAILORING", "label": "Tailoring", "order": 1 },
+        { "code": "FOOD", "label": "Food", "order": 2 },
+        { "code": "HANDICRAFTS", "label": "Handicrafts", "order": 3 },
+        { "code": "BEAUTY", "label": "Beauty", "order": 4 },
+        { "code": "ONLINE_SELLING", "label": "Online Selling", "order": 5 }
+      ]
+    },
+
+    {
+      "code": "BASIC_SUPPORT",
+      "name": "Basic Support Required",
+      "options": [
+        { "code": "TRAINING", "label": "Training", "order": 1 },
+        { "code": "FUNDING", "label": "Funding", "order": 2 },
+        { "code": "EQUIPMENT", "label": "Equipment", "order": 3 }
+      ]
+    },
+
+    {
+      "code": "SUBMISSION_MODE",
+      "name": "Submission Mode",
+      "options": [
+        { "code": "ONLINE", "label": "Online", "order": 1 },
+        { "code": "OFFLINE", "label": "Offline", "order": 2 }
+      ]
+    },
+    
+    {
+      "code": "YES_NO",
+      "name": "Yes / No",
+      "options": [
+        { "code": "YES", "label": "Yes", "order": 1 },
+        { "code": "NO", "label": "No", "order": 2 }
+      ]
+    }
+  ],
+
+  "steps": [
+    {
+      "step_id": "BASIC_INFO",
+      "title": "Basic Information",
+      "step_number": 1,
+      "total_steps": 6,
+      "questions": [
+        {
+          "question_id": "AGE_GROUP",
+          "label": "What is your age group?",
+          "input_type": "radio",
+          "required": true,
+          "options_category": "AGE_GROUP"
+        },
+        {
+          "question_id": "AREA_TYPE",
+          "label": "Area type",
+          "input_type": "radio",
+          "required": true,
+          "options_category": "AREA_TYPE"
+        }
+      ]
+    },
+
+    {
+      "step_id": "EMPLOYMENT",
+      "title": "Employment Details",
+      "step_number": 2,
+      "total_steps": 6,
+      "questions": [
+        {
+          "question_id": "EMPLOYMENT_STATUS",
+          "label": "Current employment status",
+          "input_type": "radio",
+          "required": true,
+          "options_category": "EMPLOYMENT_STATUS"
+        }
+      ]
+    },
+
+    {
+      "step_id": "ENTREPRENEUR",
+      "title": "Entrepreneur Details",
+      "step_number": 3,
+      "total_steps": 6,
+      "questions": [
+        {
+          "question_id": "ENTREPRENEUR_STAGE",
+          "label": "Entrepreneur stage",
+          "input_type": "radio",
+          "required": true,
+          "options_category": "ENTREPRENEUR_STAGE",
+          "visible_when": {
+            "EMPLOYMENT_STATUS": ["ENTREPRENEUR"]
+          }
+        },
+        {
+          "question_id": "INTERESTS",
+          "label": "Areas of interest",
+          "input_type": "checkbox",
+          "required": false,
+          "options_category": "INTERESTS",
+          "visible_when": {
+            "EMPLOYMENT_STATUS": ["ENTREPRENEUR"]
+          }
+        }
+      ]
+    },
+
+    {
+      "step_id": "SUPPORT",
+      "title": "Support Required",
+      "step_number": 4,
+      "total_steps": 6,
+      "questions": [
+        {
+          "question_id": "BASIC_SUPPORT",
+          "label": "What kind of support do you need?",
+          "input_type": "checkbox",
+          "required": false,
+          "options_category": "BASIC_SUPPORT"
+        }
+      ]
+    },
+
+    {
+      "step_id": "LAND",
+      "title": "Land & Infrastructure",
+      "step_number": 5,
+      "total_steps": 6,
+      "questions": [
+        {
+          "question_id": "REQUIRES_LAND",
+          "label": "Do you require land support?",
+          "input_type": "radio",
+          "required": false,
+          "options_category": "YES_NO"
+        }
+      ]
+    },
+
+    {
+      "step_id": "SUBMISSION",
+      "title": "Submission",
+      "step_number": 6,
+      "total_steps": 6,
+      "questions": [
+        {
+          "question_id": "SUBMISSION_MODE",
+          "label": "Submission mode",
+          "input_type": "radio",
+          "required": true,
+          "options_category": "SUBMISSION_MODE"
+        }
+      ]
+    }
+  ]
+}

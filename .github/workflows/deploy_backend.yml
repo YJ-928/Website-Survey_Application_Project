@@ -1,0 +1,88 @@
+name: Build & Deploy Backend
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Configure AWS via OIDC
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      # Login to Docker Hub (GitHub runner)
+      - name: Login to Docker Hub
+        run: |
+          echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+          hostname -I
+
+      # Build Backend Image
+      - name: Build Backend Image
+        run: |
+          pwd
+          ls -la
+          docker build \
+            -t ashokeminds/we:be-${{ github.sha }} \
+            -f django/Dockerfile \
+            django
+          docker tag ashokeminds/we:be-${{ github.sha }} ashokeminds/we:be-latest
+
+      # Push Image
+      - name: Push Backend Image
+        run: |
+          docker push ashokeminds/we:be-${{ github.sha }}
+          docker push ashokeminds/we:be-latest
+
+      # Deploy via SSM
+      - name: Deploy Backend via SSM
+        run: |
+          COMMAND_ID=$(aws ssm send-command \
+            --instance-ids "${{ secrets.EC2_INSTANCE_ID }}" \
+            --document-name "AWS-RunShellScript" \
+            --parameters commands="[
+              \"set -e\",
+              \"cd /home/ubuntu\",
+      
+              \"echo '${{ secrets.DOCKERHUB_PASSWORD }}' | docker login -u '${{ secrets.DOCKERHUB_USERNAME }}' --password-stdin\",
+      
+              \"echo 'Stopping existing container'\",
+              \"docker rm -f django-backend || true\",
+      
+              \"echo 'Removing old images'\",
+              \"docker rmi ashokeminds/we:be-latest || true\",
+      
+              \"echo 'Pulling new image'\",
+              \"docker pull ashokeminds/we:be-latest\",
+      
+              \"echo 'Starting container'\",
+              \"docker compose up -d --force-recreate backend || docker-compose up -d --force-recreate backend\"
+            ]" \
+            --query "Command.CommandId" \
+            --output text \
+            --region "${{ secrets.AWS_REGION }}")
+      
+          echo "Command ID: $COMMAND_ID"
+      
+          aws ssm wait command-executed \
+            --command-id $COMMAND_ID \
+            --instance-id "${{ secrets.EC2_INSTANCE_ID }}" \
+            --region "${{ secrets.AWS_REGION }}"
+      
+          aws ssm get-command-invocation \
+            --command-id $COMMAND_ID \
+            --instance-id "${{ secrets.EC2_INSTANCE_ID }}" \
+            --region "${{ secrets.AWS_REGION }}"
